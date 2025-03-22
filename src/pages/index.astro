@@ -1,11 +1,144 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-	<Welcome />
+	<h1>Odin Search</h1>
+	<div class="search-container">
+		<input class="search-input" placeholder="Search links..." />
+		<div class="results"></div>
+	</div>
 </Layout>
+
+<script>
+	import data from "../../scrap-stuff/odin-data.json";
+	import Fuse from "fuse.js";
+	import type { FuseResult } from "fuse.js";
+
+	const resultsContainer = document.querySelector(".results") as HTMLDivElement;
+	const searchBar = document.querySelector(".search-input") as HTMLInputElement;
+
+	const fuse = new Fuse(data, {
+		keys: ["title"],
+		minMatchCharLength: 1,
+		threshold: 0.2,
+	});
+
+	function renderSearchResult(
+		searchResult: FuseResult<{
+			title: string;
+			link: string;
+		}>[],
+	) {
+		resultsContainer.innerHTML = `
+			${searchResult
+				.map(
+					({ item }) => `
+				<div class="link-card">
+				<p class="link-title">${item.title}</p>
+				<a href={item.link} class="link-url">${item.link}</a>
+			</div>
+			`,
+				)
+				.join("")}`;
+	}
+
+	searchBar.addEventListener("input", (event) => {
+		if (event.target instanceof HTMLInputElement) {
+			const value = event.target.value;
+			renderSearchResult(fuse.search(value));
+		}
+	});
+</script>
+
+<style is:global>
+	* {
+		box-sizing: border-box;
+		font-family: sans-serif;
+	}
+
+	body {
+		background: oklch(0.21 0.034 264.665);
+	}
+
+	h1 {
+		text-align: center;
+		color: var(--text-color);
+	}
+
+	@media (prefers-color-scheme: dark) {
+		:root {
+			--bg-color: oklch(0.21 0.034 264.665);
+			--text-color: oklch(0.872 0.01 258.338);
+			--search-bg: oklab(0.373 -0.00605999 -0.0334556 / 0.5);
+			--search-border: oklch(0.551 0.027 264.364);
+			--card-bg: oklab(0.373 -0.00605999 -0.0334556 / 0.5);
+			--card-border: #333;
+			--title-color: #f0f0f0;
+			--link-color: #60a5fa;
+			--link-hover: #93c5fd;
+		}
+	}
+
+	.search-container {
+		max-width: 600px;
+		margin: 2rem auto;
+		padding: 1rem;
+		background-color: var(--bg-color);
+		color: var(--text-color);
+		border-radius: 8px;
+	}
+
+	.search-input {
+		width: 100%;
+		padding: 0.75rem 1rem;
+		font-size: 1rem;
+		border: 1px solid var(--search-border);
+		border-radius: 4px;
+		background-color: var(--search-bg);
+		color: var(--text-color);
+		margin-bottom: 1.5rem;
+		transition: all 0.2s ease;
+	}
+
+	.search-input:focus {
+		outline: none;
+		border-color: var(--link-color);
+	}
+
+	.link-card {
+		background-color: var(--card-bg);
+		border: 1px solid var(--card-border);
+		border-radius: 6px;
+		padding: 1rem;
+		margin-bottom: 1rem;
+		transition: transform 0.2s ease;
+	}
+
+	.link-title {
+		font-size: 1.125rem;
+		font-weight: 600;
+		margin: 0 0 0.5rem 0;
+		color: var(--title-color);
+	}
+
+	.link-url {
+		font-size: 0.875rem;
+		color: var(--link-color);
+		text-decoration: none;
+		word-break: break-all;
+		margin: 0;
+	}
+
+	.link-url:hover {
+		color: var(--link-hover);
+		text-decoration: underline;
+	}
+
+	.no-results {
+		text-align: center;
+		padding: 2rem 0;
+		color: var(--text-color);
+		font-style: italic;
+	}
+</style>

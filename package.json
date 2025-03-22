@@ -9,6 +9,12 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.5.4"
+    "astro": "^5.5.4",
+    "fuse.js": "^7.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.11",
+    "axios": "^1.8.4",
+    "cheerio": "^1.0.0"
   }
 }

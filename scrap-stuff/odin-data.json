@@ -1,0 +1,1178 @@
+[
+  {
+    "title": "How This Course Will Work",
+    "link": "https://www.theodinproject.com/lessons/foundations-how-this-course-will-work"
+  },
+  {
+    "title": "Introduction to Web Development",
+    "link": "https://www.theodinproject.com/lessons/foundations-introduction-to-web-development"
+  },
+  {
+    "title": "Motivation and Mindset",
+    "link": "https://www.theodinproject.com/lessons/foundations-motivation-and-mindset"
+  },
+  {
+    "title": "Asking For Help",
+    "link": "https://www.theodinproject.com/lessons/foundations-asking-for-help"
+  },
+  {
+    "title": "Join the Odin Community",
+    "link": "https://www.theodinproject.com/lessons/foundations-join-the-odin-community"
+  },
+  {
+    "title": "Computer Basics",
+    "link": "https://www.theodinproject.com/lessons/foundations-computer-basics"
+  },
+  {
+    "title": "How Does the Web Work?",
+    "link": "https://www.theodinproject.com/lessons/foundations-how-does-the-web-work"
+  },
+  {
+    "title": "Installation Overview",
+    "link": "https://www.theodinproject.com/lessons/foundations-installation-overview"
+  },
+  {
+    "title": "Installations",
+    "link": "https://www.theodinproject.com/lessons/foundations-installations"
+  },
+  {
+    "title": "Text Editors",
+    "link": "https://www.theodinproject.com/lessons/foundations-text-editors"
+  },
+  {
+    "title": "Command Line Basics",
+    "link": "https://www.theodinproject.com/lessons/foundations-command-line-basics"
+  },
+  {
+    "title": "Setting up Git",
+    "link": "https://www.theodinproject.com/lessons/foundations-setting-up-git"
+  },
+  {
+    "title": "Introduction to Git",
+    "link": "https://www.theodinproject.com/lessons/foundations-introduction-to-git"
+  },
+  {
+    "title": "Git Basics",
+    "link": "https://www.theodinproject.com/lessons/foundations-git-basics"
+  },
+  {
+    "title": "Introduction to HTML and CSS",
+    "link": "https://www.theodinproject.com/lessons/foundations-introduction-to-html-and-css"
+  },
+  {
+    "title": "Elements and Tags",
+    "link": "https://www.theodinproject.com/lessons/foundations-elements-and-tags"
+  },
+  {
+    "title": "HTML Boilerplate",
+    "link": "https://www.theodinproject.com/lessons/foundations-html-boilerplate"
+  },
+  {
+    "title": "Working with Text",
+    "link": "https://www.theodinproject.com/lessons/foundations-working-with-text"
+  },
+  {
+    "title": "Lists",
+    "link": "https://www.theodinproject.com/lessons/foundations-lists"
+  },
+  {
+    "title": "Links and Images",
+    "link": "https://www.theodinproject.com/lessons/foundations-links-and-images"
+  },
+  {
+    "title": "Commit Messages",
+    "link": "https://www.theodinproject.com/lessons/foundations-commit-messages"
+  },
+  {
+    "title": "Project: Recipes",
+    "link": "https://www.theodinproject.com/lessons/foundations-recipes"
+  },
+  {
+    "title": "Intro to CSS",
+    "link": "https://www.theodinproject.com/lessons/foundations-intro-to-css"
+  },
+  {
+    "title": "The Cascade",
+    "link": "https://www.theodinproject.com/lessons/foundations-the-cascade"
+  },
+  {
+    "title": "Inspecting HTML and CSS",
+    "link": "https://www.theodinproject.com/lessons/foundations-inspecting-html-and-css"
+  },
+  {
+    "title": "The Box Model",
+    "link": "https://www.theodinproject.com/lessons/foundations-the-box-model"
+  },
+  {
+    "title": "Block and Inline",
+    "link": "https://www.theodinproject.com/lessons/foundations-block-and-inline"
+  },
+  {
+    "title": "Introduction to Flexbox",
+    "link": "https://www.theodinproject.com/lessons/foundations-introduction-to-flexbox"
+  },
+  {
+    "title": "Growing and Shrinking",
+    "link": "https://www.theodinproject.com/lessons/foundations-growing-and-shrinking"
+  },
+  {
+    "title": "Axes",
+    "link": "https://www.theodinproject.com/lessons/foundations-axes"
+  },
+  {
+    "title": "Alignment",
+    "link": "https://www.theodinproject.com/lessons/foundations-alignment"
+  },
+  {
+    "title": "Project: Landing Page",
+    "link": "https://www.theodinproject.com/lessons/foundations-landing-page"
+  },
+  {
+    "title": "Variables and Operators",
+    "link": "https://www.theodinproject.com/lessons/foundations-variables-and-operators"
+  },
+  {
+    "title": "Installing Node.js",
+    "link": "https://www.theodinproject.com/lessons/foundations-installing-node-js"
+  },
+  {
+    "title": "Data Types and Conditionals",
+    "link": "https://www.theodinproject.com/lessons/foundations-data-types-and-conditionals"
+  },
+  {
+    "title": "JavaScript Developer Tools",
+    "link": "https://www.theodinproject.com/lessons/foundations-javascript-developer-tools"
+  },
+  {
+    "title": "Function Basics",
+    "link": "https://www.theodinproject.com/lessons/foundations-function-basics"
+  },
+  {
+    "title": "Problem Solving",
+    "link": "https://www.theodinproject.com/lessons/foundations-problem-solving"
+  },
+  {
+    "title": "Understanding Errors",
+    "link": "https://www.theodinproject.com/lessons/foundations-understanding-errors"
+  },
+  {
+    "title": "Project: Rock Paper Scissors",
+    "link": "https://www.theodinproject.com/lessons/foundations-rock-paper-scissors"
+  },
+  {
+    "title": "Clean Code",
+    "link": "https://www.theodinproject.com/lessons/foundations-clean-code"
+  },
+  {
+    "title": "Arrays and Loops",
+    "link": "https://www.theodinproject.com/lessons/foundations-arrays-and-loops"
+  },
+  {
+    "title": "DOM Manipulation and Events",
+    "link": "https://www.theodinproject.com/lessons/foundations-dom-manipulation-and-events"
+  },
+  {
+    "title": "Revisiting Rock Paper Scissors",
+    "link": "https://www.theodinproject.com/lessons/foundations-revisiting-rock-paper-scissors"
+  },
+  {
+    "title": "Project: Etch-a-Sketch",
+    "link": "https://www.theodinproject.com/lessons/foundations-etch-a-sketch"
+  },
+  {
+    "title": "Object Basics",
+    "link": "https://www.theodinproject.com/lessons/foundations-object-basics"
+  },
+  {
+    "title": "Project: Calculator",
+    "link": "https://www.theodinproject.com/lessons/foundations-calculator"
+  },
+  {
+    "title": "Choose Your Path Forward",
+    "link": "https://www.theodinproject.com/lessons/foundations-choose-your-path-forward"
+  },
+  {
+    "title": "Introduction",
+    "link": "https://www.theodinproject.com/lessons/node-path-intermediate-html-and-css-introduction"
+  },
+  {
+    "title": "Emmet",
+    "link": "https://www.theodinproject.com/lessons/node-path-intermediate-html-and-css-emmet"
+  },
+  {
+    "title": "SVG",
+    "link": "https://www.theodinproject.com/lessons/node-path-intermediate-html-and-css-svg"
+  },
+  {
+    "title": "Tables",
+    "link": "https://www.theodinproject.com/lessons/node-path-intermediate-html-and-css-tables"
+  },
+  {
+    "title": "Default Styles",
+    "link": "https://www.theodinproject.com/lessons/node-path-intermediate-html-and-css-default-styles"
+  },
+  {
+    "title": "CSS Units",
+    "link": "https://www.theodinproject.com/lessons/node-path-intermediate-html-and-css-css-units"
+  },
+  {
+    "title": "More Text Styles",
+    "link": "https://www.theodinproject.com/lessons/node-path-intermediate-html-and-css-more-text-styles"
+  },
+  {
+    "title": "More CSS Properties",
+    "link": "https://www.theodinproject.com/lessons/node-path-intermediate-html-and-css-more-css-properties"
+  },
+  {
+    "title": "Advanced Selectors",
+    "link": "https://www.theodinproject.com/lessons/node-path-intermediate-html-and-css-advanced-selectors"
+  },
+  {
+    "title": "Positioning",
+    "link": "https://www.theodinproject.com/lessons/node-path-intermediate-html-and-css-positioning"
+  },
+  {
+    "title": "CSS Functions",
+    "link": "https://www.theodinproject.com/lessons/node-path-intermediate-html-and-css-css-functions"
+  },
+  {
+    "title": "Custom Properties",
+    "link": "https://www.theodinproject.com/lessons/node-path-intermediate-html-and-css-custom-properties"
+  },
+  {
+    "title": "Browser Compatibility",
+    "link": "https://www.theodinproject.com/lessons/node-path-intermediate-html-and-css-browser-compatibility"
+  },
+  {
+    "title": "Frameworks and Preprocessors",
+    "link": "https://www.theodinproject.com/lessons/node-path-intermediate-html-and-css-frameworks-and-preprocessors"
+  },
+  {
+    "title": "Form Basics",
+    "link": "https://www.theodinproject.com/lessons/node-path-intermediate-html-and-css-form-basics"
+  },
+  {
+    "title": "Form Validation",
+    "link": "https://www.theodinproject.com/lessons/node-path-intermediate-html-and-css-form-validation"
+  },
+  {
+    "title": "Project: Sign-up Form",
+    "link": "https://www.theodinproject.com/lessons/node-path-intermediate-html-and-css-sign-up-form"
+  },
+  {
+    "title": "Introduction to Grid",
+    "link": "https://www.theodinproject.com/lessons/node-path-intermediate-html-and-css-introduction-to-grid"
+  },
+  {
+    "title": "Creating a Grid",
+    "link": "https://www.theodinproject.com/lessons/node-path-intermediate-html-and-css-creating-a-grid"
+  },
+  {
+    "title": "Positioning Grid Elements",
+    "link": "https://www.theodinproject.com/lessons/node-path-intermediate-html-and-css-positioning-grid-elements"
+  },
+  {
+    "title": "Advanced Grid Properties",
+    "link": "https://www.theodinproject.com/lessons/node-path-intermediate-html-and-css-advanced-grid-properties"
+  },
+  {
+    "title": "Using Flexbox and Grid",
+    "link": "https://www.theodinproject.com/lessons/node-path-intermediate-html-and-css-using-flexbox-and-grid"
+  },
+  {
+    "title": "Project: Admin Dashboard",
+    "link": "https://www.theodinproject.com/lessons/node-path-intermediate-html-and-css-admin-dashboard"
+  },
+  {
+    "title": "How This Course Will Work",
+    "link": "https://www.theodinproject.com/lessons/node-path-javascript-how-this-course-will-work"
+  },
+  {
+    "title": "A Quick Review",
+    "link": "https://www.theodinproject.com/lessons/node-path-javascript-a-quick-review"
+  },
+  {
+    "title": "Organizing Your JavaScript Code Introduction",
+    "link": "https://www.theodinproject.com/lessons/node-path-javascript-organizing-your-javascript-code-introduction"
+  },
+  {
+    "title": "Objects and Object Constructors",
+    "link": "https://www.theodinproject.com/lessons/node-path-javascript-objects-and-object-constructors"
+  },
+  {
+    "title": "Project: Library",
+    "link": "https://www.theodinproject.com/lessons/node-path-javascript-library"
+  },
+  {
+    "title": "Factory Functions and the Module Pattern",
+    "link": "https://www.theodinproject.com/lessons/node-path-javascript-factory-functions-and-the-module-pattern"
+  },
+  {
+    "title": "Project: Tic Tac Toe",
+    "link": "https://www.theodinproject.com/lessons/node-path-javascript-tic-tac-toe"
+  },
+  {
+    "title": "Classes",
+    "link": "https://www.theodinproject.com/lessons/node-path-javascript-classes"
+  },
+  {
+    "title": "ES6 Modules",
+    "link": "https://www.theodinproject.com/lessons/javascript-es6-modules"
+  },
+  {
+    "title": "npm",
+    "link": "https://www.theodinproject.com/lessons/node-path-javascript-npm"
+  },
+  {
+    "title": "Webpack",
+    "link": "https://www.theodinproject.com/lessons/javascript-webpack"
+  },
+  {
+    "title": "Project: Restaurant Page",
+    "link": "https://www.theodinproject.com/lessons/node-path-javascript-restaurant-page"
+  },
+  {
+    "title": "Revisiting Webpack",
+    "link": "https://www.theodinproject.com/lessons/node-path-javascript-revisiting-webpack"
+  },
+  {
+    "title": "JSON",
+    "link": "https://www.theodinproject.com/lessons/node-path-javascript-json"
+  },
+  {
+    "title": "OOP Principles",
+    "link": "https://www.theodinproject.com/lessons/node-path-javascript-oop-principles"
+  },
+  {
+    "title": "Project: Todo List",
+    "link": "https://www.theodinproject.com/lessons/node-path-javascript-todo-list"
+  },
+  {
+    "title": "Linting",
+    "link": "https://www.theodinproject.com/lessons/node-path-javascript-linting"
+  },
+  {
+    "title": "Dynamic User Interface Interactions",
+    "link": "https://www.theodinproject.com/lessons/node-path-javascript-dynamic-user-interface-interactions"
+  },
+  {
+    "title": "Form Validation with JavaScript",
+    "link": "https://www.theodinproject.com/lessons/node-path-javascript-form-validation-with-javascript"
+  },
+  {
+    "title": "What is ES6?",
+    "link": "https://www.theodinproject.com/lessons/node-path-javascript-what-is-es6"
+  },
+  {
+    "title": "Asynchronous Code",
+    "link": "https://www.theodinproject.com/lessons/node-path-javascript-asynchronous-code"
+  },
+  {
+    "title": "Working with APIs",
+    "link": "https://www.theodinproject.com/lessons/node-path-javascript-working-with-apis"
+  },
+  {
+    "title": "Async and Await",
+    "link": "https://www.theodinproject.com/lessons/node-path-javascript-async-and-await"
+  },
+  {
+    "title": "Project: Weather App",
+    "link": "https://www.theodinproject.com/lessons/node-path-javascript-weather-app"
+  },
+  {
+    "title": "A Very Brief Intro to CS",
+    "link": "https://www.theodinproject.com/lessons/javascript-a-very-brief-intro-to-cs"
+  },
+  {
+    "title": "Recursive Methods",
+    "link": "https://www.theodinproject.com/lessons/javascript-recursive-methods"
+  },
+  {
+    "title": "Project: Recursion",
+    "link": "https://www.theodinproject.com/lessons/javascript-recursion"
+  },
+  {
+    "title": "Time Complexity",
+    "link": "https://www.theodinproject.com/lessons/javascript-time-complexity"
+  },
+  {
+    "title": "Space Complexity",
+    "link": "https://www.theodinproject.com/lessons/javascript-space-complexity"
+  },
+  {
+    "title": "Common Data Structures and Algorithms",
+    "link": "https://www.theodinproject.com/lessons/javascript-common-data-structures-and-algorithms"
+  },
+  {
+    "title": "Project: Linked Lists",
+    "link": "https://www.theodinproject.com/lessons/javascript-linked-lists"
+  },
+  {
+    "title": "HashMap Data Structure",
+    "link": "https://www.theodinproject.com/lessons/javascript-hashmap-data-structure"
+  },
+  {
+    "title": "Project: HashMap",
+    "link": "https://www.theodinproject.com/lessons/javascript-hashmap"
+  },
+  {
+    "title": "Project: Binary Search Trees",
+    "link": "https://www.theodinproject.com/lessons/javascript-binary-search-trees"
+  },
+  {
+    "title": "Project: Knights Travails",
+    "link": "https://www.theodinproject.com/lessons/javascript-knights-travails"
+  },
+  {
+    "title": "A Deeper Look at Git",
+    "link": "https://www.theodinproject.com/lessons/javascript-a-deeper-look-at-git"
+  },
+  {
+    "title": "Working with Remotes",
+    "link": "https://www.theodinproject.com/lessons/javascript-working-with-remotes"
+  },
+  {
+    "title": "Using Git in the Real World",
+    "link": "https://www.theodinproject.com/lessons/javascript-using-git-in-the-real-world"
+  },
+  {
+    "title": "Testing Basics",
+    "link": "https://www.theodinproject.com/lessons/node-path-javascript-testing-basics"
+  },
+  {
+    "title": "Project: Testing Practice",
+    "link": "https://www.theodinproject.com/lessons/node-path-javascript-testing-practice"
+  },
+  {
+    "title": "More Testing",
+    "link": "https://www.theodinproject.com/lessons/node-path-javascript-more-testing"
+  },
+  {
+    "title": "Project: Battleship",
+    "link": "https://www.theodinproject.com/lessons/node-path-javascript-battleship"
+  },
+  {
+    "title": "Conclusion",
+    "link": "https://www.theodinproject.com/lessons/node-path-javascript-conclusion"
+  },
+  {
+    "title": "Transforms",
+    "link": "https://www.theodinproject.com/lessons/node-path-advanced-html-and-css-transforms"
+  },
+  {
+    "title": "Transitions",
+    "link": "https://www.theodinproject.com/lessons/node-path-advanced-html-and-css-transitions"
+  },
+  {
+    "title": "Keyframes",
+    "link": "https://www.theodinproject.com/lessons/node-path-advanced-html-and-css-keyframes"
+  },
+  {
+    "title": "Introduction to Web Accessibility",
+    "link": "https://www.theodinproject.com/lessons/node-path-advanced-html-and-css-introduction-to-web-accessibility"
+  },
+  {
+    "title": "The Web Content Accessibility Guidelines (WCAG)",
+    "link": "https://www.theodinproject.com/lessons/node-path-advanced-html-and-css-the-web-content-accessibility-guidelines-wcag"
+  },
+  {
+    "title": "Semantic HTML",
+    "link": "https://www.theodinproject.com/lessons/node-path-advanced-html-and-css-semantic-html"
+  },
+  {
+    "title": "Accessible Colors",
+    "link": "https://www.theodinproject.com/lessons/node-path-advanced-html-and-css-accessible-colors"
+  },
+  {
+    "title": "Keyboard Navigation",
+    "link": "https://www.theodinproject.com/lessons/node-path-advanced-html-and-css-keyboard-navigation"
+  },
+  {
+    "title": "Meaningful Text",
+    "link": "https://www.theodinproject.com/lessons/node-path-advanced-html-and-css-meaningful-text"
+  },
+  {
+    "title": "WAI-ARIA",
+    "link": "https://www.theodinproject.com/lessons/node-path-advanced-html-and-css-wai-aria"
+  },
+  {
+    "title": "Accessibility Auditing",
+    "link": "https://www.theodinproject.com/lessons/node-path-advanced-html-and-css-accessibility-auditing"
+  },
+  {
+    "title": "Introduction to Responsive Design",
+    "link": "https://www.theodinproject.com/lessons/node-path-advanced-html-and-css-introduction-to-responsive-design"
+  },
+  {
+    "title": "Natural Responsiveness",
+    "link": "https://www.theodinproject.com/lessons/node-path-advanced-html-and-css-natural-responsiveness"
+  },
+  {
+    "title": "Responsive Images",
+    "link": "https://www.theodinproject.com/lessons/node-path-advanced-html-and-css-responsive-images"
+  },
+  {
+    "title": "Media Queries",
+    "link": "https://www.theodinproject.com/lessons/node-path-advanced-html-and-css-media-queries"
+  },
+  {
+    "title": "Project: Homepage",
+    "link": "https://www.theodinproject.com/lessons/node-path-advanced-html-and-css-homepage"
+  },
+  {
+    "title": "How This Course Will Work",
+    "link": "https://www.theodinproject.com/lessons/node-path-react-new-how-this-course-will-work"
+  },
+  {
+    "title": "Introduction To React",
+    "link": "https://www.theodinproject.com/lessons/node-path-react-new-introduction-to-react"
+  },
+  {
+    "title": "Setting Up A React Environment",
+    "link": "https://www.theodinproject.com/lessons/node-path-react-new-setting-up-a-react-environment"
+  },
+  {
+    "title": "React Components",
+    "link": "https://www.theodinproject.com/lessons/node-path-react-new-react-components"
+  },
+  {
+    "title": "What Is JSX?",
+    "link": "https://www.theodinproject.com/lessons/node-path-react-new-what-is-jsx"
+  },
+  {
+    "title": "Rendering Techniques",
+    "link": "https://www.theodinproject.com/lessons/node-path-react-new-rendering-techniques"
+  },
+  {
+    "title": "Keys In React",
+    "link": "https://www.theodinproject.com/lessons/node-path-react-new-keys-in-react"
+  },
+  {
+    "title": "Passing Data Between Components",
+    "link": "https://www.theodinproject.com/lessons/node-path-react-new-passing-data-between-components"
+  },
+  {
+    "title": "Introduction To State",
+    "link": "https://www.theodinproject.com/lessons/node-path-react-new-introduction-to-state"
+  },
+  {
+    "title": "More On State",
+    "link": "https://www.theodinproject.com/lessons/node-path-react-new-more-on-state"
+  },
+  {
+    "title": "Project: CV Application",
+    "link": "https://www.theodinproject.com/lessons/node-path-react-new-cv-application"
+  },
+  {
+    "title": "How To Deal With Side Effects",
+    "link": "https://www.theodinproject.com/lessons/node-path-react-new-how-to-deal-with-side-effects"
+  },
+  {
+    "title": "Project: Memory Card",
+    "link": "https://www.theodinproject.com/lessons/node-path-react-new-memory-card"
+  },
+  {
+    "title": "Class Based Components",
+    "link": "https://www.theodinproject.com/lessons/node-path-react-new-class-based-components"
+  },
+  {
+    "title": "Component Lifecycle Methods",
+    "link": "https://www.theodinproject.com/lessons/node-path-react-new-component-lifecycle-methods"
+  },
+  {
+    "title": "Introduction To React Testing",
+    "link": "https://www.theodinproject.com/lessons/node-path-react-new-introduction-to-react-testing"
+  },
+  {
+    "title": "Mocking Callbacks And Components",
+    "link": "https://www.theodinproject.com/lessons/node-path-react-new-mocking-callbacks-and-components"
+  },
+  {
+    "title": "Type Checking With PropTypes",
+    "link": "https://www.theodinproject.com/lessons/node-path-react-new-type-checking-with-proptypes"
+  },
+  {
+    "title": "React Router",
+    "link": "https://www.theodinproject.com/lessons/node-path-react-new-react-router"
+  },
+  {
+    "title": "Fetching Data In React",
+    "link": "https://www.theodinproject.com/lessons/node-path-react-new-fetching-data-in-react"
+  },
+  {
+    "title": "Styling React Applications",
+    "link": "https://www.theodinproject.com/lessons/node-path-react-new-styling-react-applications"
+  },
+  {
+    "title": "Project: Shopping Cart",
+    "link": "https://www.theodinproject.com/lessons/node-path-react-new-shopping-cart"
+  },
+  {
+    "title": "Managing State With The Context API",
+    "link": "https://www.theodinproject.com/lessons/node-path-react-new-managing-state-with-the-context-api"
+  },
+  {
+    "title": "Reducing State",
+    "link": "https://www.theodinproject.com/lessons/node-path-react-new-reducing-state"
+  },
+  {
+    "title": "Refs And Memoization",
+    "link": "https://www.theodinproject.com/lessons/node-path-react-new-refs-and-memoization"
+  },
+  {
+    "title": "Conclusion",
+    "link": "https://www.theodinproject.com/lessons/node-path-react-conclusion"
+  },
+  {
+    "title": "Databases",
+    "link": "https://www.theodinproject.com/lessons/node-path-databases"
+  },
+  {
+    "title": "Databases and SQL",
+    "link": "https://www.theodinproject.com/lessons/node-path-databases-databases-and-sql"
+  },
+  {
+    "title": "Project: SQL Zoo",
+    "link": "https://www.theodinproject.com/lessons/node-path-databases-sql-zoo"
+  },
+  {
+    "title": "Introduction to the Back End",
+    "link": "https://www.theodinproject.com/lessons/nodejs-introduction-to-the-back-end"
+  },
+  {
+    "title": "Introduction to Frameworks",
+    "link": "https://www.theodinproject.com/lessons/nodejs-introduction-to-frameworks"
+  },
+  {
+    "title": "Introduction: What is NodeJS?",
+    "link": "https://www.theodinproject.com/lessons/nodejs-introduction-what-is-nodejs"
+  },
+  {
+    "title": "Getting Started",
+    "link": "https://www.theodinproject.com/lessons/nodejs-getting-started"
+  },
+  {
+    "title": "Debugging Node",
+    "link": "https://www.theodinproject.com/lessons/nodejs-debugging-node"
+  },
+  {
+    "title": "Project: Basic Informational Site",
+    "link": "https://www.theodinproject.com/lessons/nodejs-basic-informational-site"
+  },
+  {
+    "title": "Environment Variables",
+    "link": "https://www.theodinproject.com/lessons/nodejs-environment-variables"
+  },
+  {
+    "title": "Introduction to Express",
+    "link": "https://www.theodinproject.com/lessons/node-path-nodejs-introduction-to-express"
+  },
+  {
+    "title": "Routes",
+    "link": "https://www.theodinproject.com/lessons/nodejs-routes"
+  },
+  {
+    "title": "Controllers",
+    "link": "https://www.theodinproject.com/lessons/nodejs-controllers"
+  },
+  {
+    "title": "Views",
+    "link": "https://www.theodinproject.com/lessons/nodejs-views"
+  },
+  {
+    "title": "Project: Mini Message Board",
+    "link": "https://www.theodinproject.com/lessons/node-path-nodejs-mini-message-board"
+  },
+  {
+    "title": "Deployment",
+    "link": "https://www.theodinproject.com/lessons/node-path-nodejs-deployment"
+  },
+  {
+    "title": "Forms and Data Handling",
+    "link": "https://www.theodinproject.com/lessons/nodejs-forms-and-data-handling"
+  },
+  {
+    "title": "Installing PostgreSQL",
+    "link": "https://www.theodinproject.com/lessons/nodejs-installing-postgresql"
+  },
+  {
+    "title": "Using PostgreSQL",
+    "link": "https://www.theodinproject.com/lessons/nodejs-using-postgresql"
+  },
+  {
+    "title": "Project: Inventory Application",
+    "link": "https://www.theodinproject.com/lessons/node-path-nodejs-inventory-application"
+  },
+  {
+    "title": "Authentication Basics",
+    "link": "https://www.theodinproject.com/lessons/node-path-nodejs-authentication-basics"
+  },
+  {
+    "title": "Project: Members Only",
+    "link": "https://www.theodinproject.com/lessons/node-path-nodejs-members-only"
+  },
+  {
+    "title": "Prisma ORM",
+    "link": "https://www.theodinproject.com/lessons/nodejs-prisma-orm"
+  },
+  {
+    "title": "Project: File Uploader",
+    "link": "https://www.theodinproject.com/lessons/nodejs-file-uploader"
+  },
+  {
+    "title": "API Basics",
+    "link": "https://www.theodinproject.com/lessons/nodejs-api-basics"
+  },
+  {
+    "title": "API Security",
+    "link": "https://www.theodinproject.com/lessons/nodejs-api-security"
+  },
+  {
+    "title": "Project: Blog API",
+    "link": "https://www.theodinproject.com/lessons/node-path-nodejs-blog-api"
+  },
+  {
+    "title": "Testing Routes and Controllers",
+    "link": "https://www.theodinproject.com/lessons/nodejs-testing-routes-and-controllers"
+  },
+  {
+    "title": "Testing Database Operations",
+    "link": "https://www.theodinproject.com/lessons/node-path-nodejs-testing-database-operations"
+  },
+  {
+    "title": "Project: Where's Waldo (A Photo Tagging App)",
+    "link": "https://www.theodinproject.com/lessons/nodejs-where-s-waldo-a-photo-tagging-app"
+  },
+  {
+    "title": "Project: Messaging App",
+    "link": "https://www.theodinproject.com/lessons/nodejs-messaging-app"
+  },
+  {
+    "title": "Project: Odin-Book",
+    "link": "https://www.theodinproject.com/lessons/node-path-nodejs-odin-book"
+  },
+  {
+    "title": "Conclusion",
+    "link": "https://www.theodinproject.com/lessons/nodejs-conclusion"
+  },
+  {
+    "title": "How This Course Will Work",
+    "link": "https://www.theodinproject.com/lessons/node-path-getting-hired-how-this-course-will-work"
+  },
+  {
+    "title": "Professional Networking",
+    "link": "https://www.theodinproject.com/lessons/node-path-getting-hired-professional-networking"
+  },
+  {
+    "title": "Strategy",
+    "link": "https://www.theodinproject.com/lessons/node-path-getting-hired-strategy"
+  },
+  {
+    "title": "It Starts with YOU",
+    "link": "https://www.theodinproject.com/lessons/node-path-getting-hired-it-starts-with-you"
+  },
+  {
+    "title": "What Companies Want",
+    "link": "https://www.theodinproject.com/lessons/node-path-getting-hired-what-companies-want"
+  },
+  {
+    "title": "What You Can Do to Prepare",
+    "link": "https://www.theodinproject.com/lessons/node-path-getting-hired-what-you-can-do-to-prepare"
+  },
+  {
+    "title": "Project: Building Your Personal Website",
+    "link": "https://www.theodinproject.com/lessons/node-path-getting-hired-building-your-personal-website"
+  },
+  {
+    "title": "Collecting Job Leads",
+    "link": "https://www.theodinproject.com/lessons/node-path-getting-hired-collecting-job-leads"
+  },
+  {
+    "title": "Qualifying Job Leads",
+    "link": "https://www.theodinproject.com/lessons/node-path-getting-hired-qualifying-job-leads"
+  },
+  {
+    "title": "Project: Building Your Resume",
+    "link": "https://www.theodinproject.com/lessons/node-path-getting-hired-building-your-resume"
+  },
+  {
+    "title": "Applying for Web Development Jobs",
+    "link": "https://www.theodinproject.com/lessons/node-path-getting-hired-applying-for-web-development-jobs"
+  },
+  {
+    "title": "Preparing to Interview and Interviewing",
+    "link": "https://www.theodinproject.com/lessons/node-path-getting-hired-preparing-to-interview-and-interviewing"
+  },
+  {
+    "title": "Handling a Job Offer",
+    "link": "https://www.theodinproject.com/lessons/node-path-getting-hired-handling-a-job-offer"
+  },
+  {
+    "title": "Conclusion",
+    "link": "https://www.theodinproject.com/lessons/node-path-getting-hired-conclusion"
+  },
+  {
+    "title": "How This Course Will Work",
+    "link": "https://www.theodinproject.com/lessons/ruby-how-this-course-will-work"
+  },
+  {
+    "title": "Installing Ruby",
+    "link": "https://www.theodinproject.com/lessons/ruby-installing-ruby"
+  },
+  {
+    "title": "Basic Data Types",
+    "link": "https://www.theodinproject.com/lessons/ruby-basic-data-types"
+  },
+  {
+    "title": "Variables",
+    "link": "https://www.theodinproject.com/lessons/ruby-variables"
+  },
+  {
+    "title": "Input and Output",
+    "link": "https://www.theodinproject.com/lessons/ruby-input-and-output"
+  },
+  {
+    "title": "Conditional Logic",
+    "link": "https://www.theodinproject.com/lessons/ruby-conditional-logic"
+  },
+  {
+    "title": "Loops",
+    "link": "https://www.theodinproject.com/lessons/ruby-loops"
+  },
+  {
+    "title": "Arrays",
+    "link": "https://www.theodinproject.com/lessons/ruby-arrays"
+  },
+  {
+    "title": "Hashes",
+    "link": "https://www.theodinproject.com/lessons/ruby-hashes"
+  },
+  {
+    "title": "Methods",
+    "link": "https://www.theodinproject.com/lessons/ruby-methods"
+  },
+  {
+    "title": "Debugging",
+    "link": "https://www.theodinproject.com/lessons/ruby-debugging"
+  },
+  {
+    "title": "Basic Enumerable Methods",
+    "link": "https://www.theodinproject.com/lessons/ruby-basic-enumerable-methods"
+  },
+  {
+    "title": "Predicate Enumerable Methods",
+    "link": "https://www.theodinproject.com/lessons/ruby-predicate-enumerable-methods"
+  },
+  {
+    "title": "Nested Collections",
+    "link": "https://www.theodinproject.com/lessons/ruby-nested-collections"
+  },
+  {
+    "title": "Project: Caesar Cipher",
+    "link": "https://www.theodinproject.com/lessons/ruby-caesar-cipher"
+  },
+  {
+    "title": "Project: Sub Strings",
+    "link": "https://www.theodinproject.com/lessons/ruby-sub-strings"
+  },
+  {
+    "title": "Project: Stock Picker",
+    "link": "https://www.theodinproject.com/lessons/ruby-stock-picker"
+  },
+  {
+    "title": "Project: Bubble Sort",
+    "link": "https://www.theodinproject.com/lessons/ruby-bubble-sort"
+  },
+  {
+    "title": "Object Oriented Programming",
+    "link": "https://www.theodinproject.com/lessons/ruby-object-oriented-programming"
+  },
+  {
+    "title": "Project Management",
+    "link": "https://www.theodinproject.com/lessons/ruby-project-management"
+  },
+  {
+    "title": "Linting and RuboCop",
+    "link": "https://www.theodinproject.com/lessons/ruby-linting-and-rubocop"
+  },
+  {
+    "title": "Project: Tic Tac Toe",
+    "link": "https://www.theodinproject.com/lessons/ruby-tic-tac-toe"
+  },
+  {
+    "title": "Project: Mastermind",
+    "link": "https://www.theodinproject.com/lessons/ruby-mastermind"
+  },
+  {
+    "title": "Files and Serialization",
+    "link": "https://www.theodinproject.com/lessons/ruby-files-and-serialization"
+  },
+  {
+    "title": "Project: Event Manager",
+    "link": "https://www.theodinproject.com/lessons/ruby-event-manager"
+  },
+  {
+    "title": "Project: Hangman",
+    "link": "https://www.theodinproject.com/lessons/ruby-hangman"
+  },
+  {
+    "title": "Pattern Matching",
+    "link": "https://www.theodinproject.com/lessons/ruby-pattern-matching"
+  },
+  {
+    "title": "Blocks",
+    "link": "https://www.theodinproject.com/lessons/ruby-blocks"
+  },
+  {
+    "title": "Project: Custom Enumerables",
+    "link": "https://www.theodinproject.com/lessons/ruby-custom-enumerables"
+  },
+  {
+    "title": "A Very Brief Intro to CS",
+    "link": "https://www.theodinproject.com/lessons/ruby-a-very-brief-intro-to-cs"
+  },
+  {
+    "title": "Recursive Methods",
+    "link": "https://www.theodinproject.com/lessons/ruby-recursive-methods"
+  },
+  {
+    "title": "Project: Recursion",
+    "link": "https://www.theodinproject.com/lessons/ruby-recursion"
+  },
+  {
+    "title": "Time Complexity",
+    "link": "https://www.theodinproject.com/lessons/ruby-time-complexity"
+  },
+  {
+    "title": "Space Complexity",
+    "link": "https://www.theodinproject.com/lessons/ruby-space-complexity"
+  },
+  {
+    "title": "Common Data Structures and Algorithms",
+    "link": "https://www.theodinproject.com/lessons/ruby-common-data-structures-and-algorithms"
+  },
+  {
+    "title": "Project: Linked Lists",
+    "link": "https://www.theodinproject.com/lessons/ruby-linked-lists"
+  },
+  {
+    "title": "HashMap Data Structure",
+    "link": "https://www.theodinproject.com/lessons/ruby-hashmap-data-structure"
+  },
+  {
+    "title": "Project: HashMap",
+    "link": "https://www.theodinproject.com/lessons/ruby-hashmap"
+  },
+  {
+    "title": "Project: Binary Search Trees",
+    "link": "https://www.theodinproject.com/lessons/ruby-binary-search-trees"
+  },
+  {
+    "title": "Project: Knights Travails",
+    "link": "https://www.theodinproject.com/lessons/ruby-knights-travails"
+  },
+  {
+    "title": "A Deeper Look at Git",
+    "link": "https://www.theodinproject.com/lessons/ruby-a-deeper-look-at-git"
+  },
+  {
+    "title": "Working with Remotes",
+    "link": "https://www.theodinproject.com/lessons/ruby-working-with-remotes"
+  },
+  {
+    "title": "Using Git in the Real World",
+    "link": "https://www.theodinproject.com/lessons/ruby-using-git-in-the-real-world"
+  },
+  {
+    "title": "Test Driven Development",
+    "link": "https://www.theodinproject.com/lessons/ruby-test-driven-development"
+  },
+  {
+    "title": "Introduction to RSpec",
+    "link": "https://www.theodinproject.com/lessons/ruby-introduction-to-rspec"
+  },
+  {
+    "title": "Project: Connect Four",
+    "link": "https://www.theodinproject.com/lessons/ruby-connect-four"
+  },
+  {
+    "title": "Project: Ruby Final Project",
+    "link": "https://www.theodinproject.com/lessons/ruby-ruby-final-project"
+  },
+  {
+    "title": "Conclusion",
+    "link": "https://www.theodinproject.com/lessons/ruby-conclusion"
+  },
+  {
+    "title": "How This Course Will Work",
+    "link": "https://www.theodinproject.com/lessons/ruby-on-rails-how-this-course-will-work"
+  },
+  {
+    "title": "Introduction to the Back End",
+    "link": "https://www.theodinproject.com/lessons/ruby-on-rails-introduction-to-the-back-end"
+  },
+  {
+    "title": "Introduction to Frameworks",
+    "link": "https://www.theodinproject.com/lessons/ruby-on-rails-introduction-to-frameworks"
+  },
+  {
+    "title": "Project: Installing Rails",
+    "link": "https://www.theodinproject.com/lessons/ruby-on-rails-installing-rails"
+  },
+  {
+    "title": "A Railsy Web Refresher",
+    "link": "https://www.theodinproject.com/lessons/ruby-on-rails-a-railsy-web-refresher"
+  },
+  {
+    "title": "Routing",
+    "link": "https://www.theodinproject.com/lessons/ruby-on-rails-routing"
+  },
+  {
+    "title": "Controllers",
+    "link": "https://www.theodinproject.com/lessons/ruby-on-rails-controllers"
+  },
+  {
+    "title": "Views",
+    "link": "https://www.theodinproject.com/lessons/ruby-on-rails-views"
+  },
+  {
+    "title": "Project: Blog App",
+    "link": "https://www.theodinproject.com/lessons/ruby-on-rails-blog-app"
+  },
+  {
+    "title": "Deployment",
+    "link": "https://www.theodinproject.com/lessons/ruby-on-rails-deployment"
+  },
+  {
+    "title": "Active Record Basics",
+    "link": "https://www.theodinproject.com/lessons/ruby-on-rails-active-record-basics"
+  },
+  {
+    "title": "Migrations",
+    "link": "https://www.theodinproject.com/lessons/ruby-on-rails-migrations"
+  },
+  {
+    "title": "Basic Validations",
+    "link": "https://www.theodinproject.com/lessons/ruby-on-rails-basic-validations"
+  },
+  {
+    "title": "Basic Associations",
+    "link": "https://www.theodinproject.com/lessons/ruby-on-rails-basic-associations"
+  },
+  {
+    "title": "Project: Micro-Reddit",
+    "link": "https://www.theodinproject.com/lessons/ruby-on-rails-micro-reddit"
+  },
+  {
+    "title": "The Asset Pipeline",
+    "link": "https://www.theodinproject.com/lessons/ruby-on-rails-the-asset-pipeline"
+  },
+  {
+    "title": "Importmaps",
+    "link": "https://www.theodinproject.com/lessons/ruby-on-rails-importmaps"
+  },
+  {
+    "title": "Turbo Drive",
+    "link": "https://www.theodinproject.com/lessons/ruby-on-rails-turbo-drive"
+  },
+  {
+    "title": "Form Basics",
+    "link": "https://www.theodinproject.com/lessons/ruby-on-rails-form-basics"
+  },
+  {
+    "title": "Project: Forms",
+    "link": "https://www.theodinproject.com/lessons/ruby-on-rails-forms"
+  },
+  {
+    "title": "Sessions Cookies and Authentication",
+    "link": "https://www.theodinproject.com/lessons/ruby-on-rails-sessions-cookies-and-authentication"
+  },
+  {
+    "title": "Project: Members Only!",
+    "link": "https://www.theodinproject.com/lessons/ruby-on-rails-members-only"
+  },
+  {
+    "title": "Installing PostgreSQL",
+    "link": "https://www.theodinproject.com/lessons/ruby-on-rails-installing-postgresql"
+  },
+  {
+    "title": "Active Record Queries",
+    "link": "https://www.theodinproject.com/lessons/ruby-on-rails-active-record-queries"
+  },
+  {
+    "title": "Active Record Associations",
+    "link": "https://www.theodinproject.com/lessons/ruby-on-rails-active-record-associations"
+  },
+  {
+    "title": "Project: Private Events",
+    "link": "https://www.theodinproject.com/lessons/ruby-on-rails-private-events"
+  },
+  {
+    "title": "Active Record Callbacks",
+    "link": "https://www.theodinproject.com/lessons/ruby-on-rails-active-record-callbacks"
+  },
+  {
+    "title": "Advanced Forms",
+    "link": "https://www.theodinproject.com/lessons/ruby-on-rails-advanced-forms"
+  },
+  {
+    "title": "Project: Flight Booker",
+    "link": "https://www.theodinproject.com/lessons/ruby-on-rails-flight-booker"
+  },
+  {
+    "title": "APIs and Building Your Own",
+    "link": "https://www.theodinproject.com/lessons/ruby-on-rails-apis-and-building-your-own"
+  },
+  {
+    "title": "Working with External APIs",
+    "link": "https://www.theodinproject.com/lessons/ruby-on-rails-working-with-external-apis"
+  },
+  {
+    "title": "Project: Kittens API",
+    "link": "https://www.theodinproject.com/lessons/ruby-on-rails-kittens-api"
+  },
+  {
+    "title": "Project: Flickr API",
+    "link": "https://www.theodinproject.com/lessons/ruby-on-rails-flickr-api"
+  },
+  {
+    "title": "CSS Bundling",
+    "link": "https://www.theodinproject.com/lessons/ruby-on-rails-css-bundling"
+  },
+  {
+    "title": "JS Bundling",
+    "link": "https://www.theodinproject.com/lessons/ruby-on-rails-js-bundling"
+  },
+  {
+    "title": "Turbo",
+    "link": "https://www.theodinproject.com/lessons/ruby-on-rails-turbo"
+  },
+  {
+    "title": "Stimulus",
+    "link": "https://www.theodinproject.com/lessons/ruby-on-rails-stimulus"
+  },
+  {
+    "title": "Mailers",
+    "link": "https://www.theodinproject.com/lessons/ruby-on-rails-mailers"
+  },
+  {
+    "title": "Project: Sending Confirmation Emails",
+    "link": "https://www.theodinproject.com/lessons/ruby-on-rails-sending-confirmation-emails"
+  },
+  {
+    "title": "Advanced Topics",
+    "link": "https://www.theodinproject.com/lessons/ruby-on-rails-advanced-topics"
+  },
+  {
+    "title": "Websockets and Actioncable",
+    "link": "https://www.theodinproject.com/lessons/ruby-on-rails-websockets-and-actioncable"
+  },
+  {
+    "title": "Project: Rails Final Project",
+    "link": "https://www.theodinproject.com/lessons/ruby-on-rails-rails-final-project"
+  },
+  {
+    "title": "Conclusion",
+    "link": "https://www.theodinproject.com/lessons/ruby-on-rails-conclusion"
+  }
+]
