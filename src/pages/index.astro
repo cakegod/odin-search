@@ -4,94 +4,115 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-	<div class="container">
-		<header>
-			<h1>Odin Search</h1>
-			<p class="subtitle">
-				Search across {data.length} lessons of The Odin Project
-			</p>
-		</header>
+  <div class="container">
+    <header>
+      <h1>Odin Search</h1>
+      <p class="subtitle">
+        Search across {data.length} lessons of The Odin Project
+      </p>
+    </header>
 
-		<div class="search-container">
-			<form>
-				<svg
-					class="search-icon"
-					xmlns="http://www.w3.org/2000/svg"
-					viewBox="0 0 24 24"
-					fill="none"
-					stroke="currentColor"
-					stroke-width="2"
-					stroke-linecap="round"
-					stroke-linejoin="round">
-					<circle cx="11" cy="11" r="8"></circle>
-					<line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-				</svg>
-				<input
-					name="search"
-					class="search-input"
-					placeholder="Search for lessons..."
-				/>
-				<button class="clear-button" aria-label="Clear search" type="button">
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						viewBox="0 0 24 24"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="2"
-						stroke-linecap="round"
-						stroke-linejoin="round">
-						<line x1="18" y1="6" x2="6" y2="18"></line>
-						<line x1="6" y1="6" x2="18" y2="18"></line>
-					</svg>
-				</button>
-			</form>
-			<p class="results-count"></p>
-			<div class="results-container">
-				<div class="results"></div>
-				<p class="results-state">Start typing to search lessons</p>
-			</div>
-		</div>
-	</div>
+    <div class="search-container">
+      <form>
+        <svg
+          class="search-icon"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input
+          name="search"
+          class="search-input"
+          placeholder="Search for lessons..."
+        />
+        <button class="clear-button" aria-label="Clear search" type="button">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </form>
+      <p class="results-count"></p>
+      <div class="results-container">
+        <div class="results"></div>
+        <p class="results-state">Start typing to search lessons</p>
+      </div>
+    </div>
+  </div>
 </Layout>
 
 <script>
-	import data from "../../scrape-stuff/odin-data.json";
-	import Fuse from "fuse.js";
-	import type { FuseResult } from "fuse.js";
+  import data from "../../scrape-stuff/odin-data.json";
+  import Fuse from "fuse.js";
+  import type { FuseResult, RangeTuple } from "fuse.js";
 
-	const resultsContainer = document.querySelector(".results") as HTMLDivElement;
-	const resultsState = document.querySelector(
-		".results-state",
-	) as HTMLDivElement;
-	const searchBar = document.querySelector(".search-input") as HTMLInputElement;
-	const clearButton = document.querySelector(
-		".clear-button",
-	) as HTMLButtonElement;
-	const resultsCount = document.querySelector(
-		".results-count",
-	) as HTMLSpanElement;
+  const resultsContainer = document.querySelector(".results") as HTMLDivElement;
+  const resultsState = document.querySelector(
+    ".results-state"
+  ) as HTMLDivElement;
+  const searchBar = document.querySelector(".search-input") as HTMLInputElement;
+  const clearButton = document.querySelector(
+    ".clear-button"
+  ) as HTMLButtonElement;
+  const resultsCount = document.querySelector(
+    ".results-count"
+  ) as HTMLSpanElement;
 
-	// Initialize Fuse with improved options
-	const fuse = new Fuse(data, {
-		keys: ["title"],
-		threshold: 0.2,
-	});
+  const fuse = new Fuse(data, {
+    keys: ["title"],
+    threshold: 0.2,
+    includeMatches: true,
+  });
 
-	function renderSearchResult(
-		searchResults: FuseResult<{
-			title: string;
-			link: string;
-		}>[],
-	) {
-		if (searchResults.length > 0) {
-			resultsCount.textContent = `Found ${searchResults.length} result${searchResults.length === 1 ? "" : "s"}`;
-			resultsState.textContent = "";
-			resultsContainer.innerHTML = `
+  function withHighlight(value: string, indices: RangeTuple[]) {
+    return value
+      .split("")
+      .map((s, i) => {
+        if (indices.some(([start, end]) => start === i && end === start)) {
+          return `<span class="highlight">${s}</span>`;
+        } else if (indices.some(([start, _end]) => start === i)) {
+          return `<span class="highlight">${s}`;
+        } else if (indices.some(([_start, end]) => end === i)) {
+          return `${s}</span>`;
+        }
+
+        return s;
+      })
+      .join("");
+  }
+
+  function renderSearchResult(
+    searchResults: FuseResult<{
+      title: string;
+      link: string;
+    }>[]
+  ) {
+    console.log(searchResults);
+
+    if (searchResults.length > 0) {
+      resultsCount.textContent = `Found ${searchResults.length} result${searchResults.length === 1 ? "" : "s"}`;
+      resultsState.textContent = "";
+      resultsContainer.innerHTML = `
 	${searchResults
-		.map(
-			({ item }) => `
+    .map(
+      ({ item, matches }) => `
 			<div class="link-card" tabindex="0">
-				<p class="link-title">${item.title}</p>
+				<p class="link-title">${withHighlight(item.title, matches?.[0].indices as RangeTuple[])}</p>
 				<a href="${item.link}" class="link-url" target="_blank" rel="noopener noreferrer">
 					${item.link}
 					<svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -101,290 +122,295 @@ import Layout from "../layouts/Layout.astro";
 					</svg>
 				</a>
 			</div>
-		`,
-		)
-		.join("")}`;
-		} else {
-			resultsContainer.innerHTML = "";
-			resultsState.textContent = "Try searching a different term";
-			resultsCount.textContent = "No results found";
-		}
-	}
+		`
+    )
+    .join("")}`;
+    } else {
+      resultsContainer.innerHTML = "";
+      resultsState.textContent = "Try searching a different term";
+      resultsCount.textContent = "No results found";
+    }
+  }
 
-	searchBar.addEventListener("input", (event) => {
-		if (event.target instanceof HTMLInputElement) {
-			const value = event.target.value.trim();
-			renderSearchResult(fuse.search(value));
-		}
-	});
+  searchBar.addEventListener("input", (event) => {
+    if (event.target instanceof HTMLInputElement) {
+      const value = event.target.value.trim();
+      renderSearchResult(fuse.search(value));
+    }
+  });
 
-	clearButton.addEventListener("click", () => {
-		searchBar.value = "";
-		searchBar.focus();
-		renderSearchResult(fuse.search(searchBar.value));
-		resultsState.textContent = "Start typing to search lessons";
-		resultsCount.textContent = "";
-	});
+  clearButton.addEventListener("click", () => {
+    searchBar.value = "";
+    searchBar.focus();
+    renderSearchResult(fuse.search(searchBar.value));
+    resultsState.textContent = "Start typing to search lessons";
+    resultsCount.textContent = "";
+  });
 </script>
 
 <style is:global>
-	* {
-		box-sizing: border-box;
-		font-family:
-			system-ui,
-			-apple-system,
-			BlinkMacSystemFont,
-			"Segoe UI",
-			Roboto,
-			Oxygen,
-			Ubuntu,
-			Cantarell,
-			sans-serif;
-		color: var(--text-color);
-	}
+  * {
+    box-sizing: border-box;
+    font-family:
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      Oxygen,
+      Ubuntu,
+      Cantarell,
+      sans-serif;
+    color: var(--text-color);
+  }
 
-	:root {
-		--bg-color: oklch(0.21 0.034 264.665);
-		--container-bg: oklch(0.17 0.03 270);
-		--text-color: oklch(0.95 0.01 258.338);
-		--muted-text: oklch(0.8 0.01 258.338);
-		--search-bg: oklch(0.25 0.03 264.364 / 0.7);
-		--search-border: oklch(0.4 0.05 264.364);
-		--search-focus-border: oklch(0.6 0.1 264.364);
-		--card-bg: oklch(0.27 0.03 264.364 / 0.7);
-		--card-hover-bg: oklch(0.3 0.04 264.364);
-		--card-active-bg: oklch(0.32 0.05 264.364);
-		--card-focus-outline: oklch(0.6 0.1 264.364);
-		--card-border: oklch(0.3 0.04 264.364);
-		--title-color: oklch(0.95 0.01 258.338);
-		--link-color: oklch(0.7 0.15 250);
-		--link-hover: oklch(0.8 0.15 250);
-		--icon-color: oklch(0.7 0.15 250);
-	}
+  :root {
+    --bg-color: oklch(0.21 0.034 264.665);
+    --container-bg: oklch(0.17 0.03 270);
+    --text-color: oklch(0.95 0.01 258.338);
+    --muted-text: oklch(0.8 0.01 258.338);
+    --search-bg: oklch(0.25 0.03 264.364 / 0.7);
+    --search-border: oklch(0.4 0.05 264.364);
+    --search-focus-border: oklch(0.6 0.1 264.364);
+    --card-bg: oklch(0.27 0.03 264.364 / 0.7);
+    --card-hover-bg: oklch(0.3 0.04 264.364);
+    --card-active-bg: oklch(0.32 0.05 264.364);
+    --card-focus-outline: oklch(0.6 0.1 264.364);
+    --card-border: oklch(0.3 0.04 264.364);
+    --title-color: oklch(0.95 0.01 258.338);
+    --link-color: oklch(0.7 0.15 250);
+    --link-hover: oklch(0.8 0.15 250);
+    --icon-color: oklch(0.7 0.15 250);
+    --highlight: oklch(0.7 0.15 250 / 0.25);
+  }
 
-	@media (prefers-color-scheme: light) {
-		:root {
-			--bg-color: oklch(0.95 0.015 264.665);
-			--container-bg: oklch(0.98 0.01 270);
-			--text-color: oklch(0.2 0.02 258.338);
-			--muted-text: oklch(0.4 0.02 258.338);
-			--search-bg: oklch(0.97 0.01 264.364);
-			--search-border: oklch(0.7 0.03 264.364);
-			--search-focus-border: oklch(0.5 0.15 264.364);
-			--card-bg: oklch(0.97 0.01 264.364);
-			--card-hover-bg: oklch(0.95 0.02 264.364);
-			--card-active-bg: oklch(0.93 0.03 264.364);
-			--card-focus-outline: oklch(0.5 0.15 264.364);
-			--card-border: oklch(0.8 0.02 264.364);
-			--title-color: oklch(0.2 0.02 258.338);
-			--link-color: oklch(0.5 0.2 250);
-			--link-hover: oklch(0.4 0.2 250);
-			--icon-color: oklch(0.5 0.2 250);
-		}
-	}
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg-color: oklch(0.95 0.015 264.665);
+      --container-bg: oklch(0.98 0.01 270);
+      --text-color: oklch(0.2 0.02 258.338);
+      --muted-text: oklch(0.4 0.02 258.338);
+      --search-bg: oklch(0.97 0.01 264.364);
+      --search-border: oklch(0.7 0.03 264.364);
+      --search-focus-border: oklch(0.5 0.15 264.364);
+      --card-bg: oklch(0.97 0.01 264.364);
+      --card-hover-bg: oklch(0.95 0.02 264.364);
+      --card-active-bg: oklch(0.93 0.03 264.364);
+      --card-focus-outline: oklch(0.5 0.15 264.364);
+      --card-border: oklch(0.8 0.02 264.364);
+      --title-color: oklch(0.2 0.02 258.338);
+      --link-color: oklch(0.5 0.2 250);
+      --link-hover: oklch(0.4 0.2 250);
+      --icon-color: oklch(0.5 0.2 250);
+    }
+  }
 
-	html,
-	body {
-		margin: 0;
-		padding: 0;
-		background-color: var(--bg-color);
-		min-height: 100vh;
-		scrollbar-gutter: stable both-edges;
-	}
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    min-height: 100vh;
+    scrollbar-gutter: stable both-edges;
+  }
 
-	.container {
-		max-width: 800px;
-		margin: 0 auto;
-		padding: 2rem 1.5rem;
-	}
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+  }
 
-	header {
-		text-align: center;
-		margin-bottom: 2.5rem;
-	}
+  header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
 
-	h1 {
-		font-size: 2.5rem;
-		margin: 0 0 0.5rem;
-		background: linear-gradient(
-			135deg,
-			oklch(0.7 0.2 250),
-			oklch(0.7 0.15 280)
-		);
-		-webkit-background-clip: text;
-		background-clip: text;
-		color: transparent;
-		font-weight: 800;
-	}
+  h1 {
+    font-size: 2.5rem;
+    margin: 0 0 0.5rem;
+    background: linear-gradient(
+      135deg,
+      oklch(0.7 0.2 250),
+      oklch(0.7 0.15 280)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 800;
+  }
 
-	.subtitle {
-		font-size: 1.1rem;
-		color: var(--muted-text);
-		margin: 0;
-	}
+  .subtitle {
+    font-size: 1.1rem;
+    color: var(--muted-text);
+    margin: 0;
+  }
 
-	.search-container {
-		background-color: var(--container-bg);
-		border-radius: 12px;
-		padding: 1.5rem;
-		box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-	}
+  .search-container {
+    background-color: var(--container-bg);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  }
 
-	form {
-		position: relative;
-		margin-bottom: 0.5rem;
-	}
+  form {
+    position: relative;
+    margin-bottom: 0.5rem;
+  }
 
-	.search-icon {
-		position: absolute;
-		left: 1rem;
-		top: 50%;
-		transform: translateY(-50%);
-		width: 1.25rem;
-		height: 1.25rem;
-		color: var(--muted-text);
-	}
+  .search-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1.25rem;
+    height: 1.25rem;
+    color: var(--muted-text);
+  }
 
-	.search-input {
-		width: 100%;
-		padding: 1rem 3rem;
-		font-size: 1.1rem;
-		border: 2px solid var(--search-border);
-		border-radius: 8px;
-		background-color: var(--search-bg);
-		color: var(--text-color);
-		transition: all 0.2s ease;
+  .search-input {
+    width: 100%;
+    padding: 1rem 3rem;
+    font-size: 1.1rem;
+    border: 2px solid var(--search-border);
+    border-radius: 8px;
+    background-color: var(--search-bg);
+    color: var(--text-color);
+    transition: all 0.2s ease;
 
-		&:focus {
-			outline: none;
-			border-color: var(--search-focus-border);
-			box-shadow: 0 0 0 3px var(--search-focus-border / 0.3);
-		}
+    &:focus {
+      outline: none;
+      border-color: var(--search-focus-border);
+      box-shadow: 0 0 0 3px var(--search-focus-border / 0.3);
+    }
 
-		&::placeholder {
-			color: var(--muted-text);
-			opacity: 0.7;
-		}
-	}
+    &::placeholder {
+      color: var(--muted-text);
+      opacity: 0.7;
+    }
+  }
 
-	.clear-button {
-		position: absolute;
-		right: 1rem;
-		top: 50%;
-		transform: translateY(-50%);
-		background: none;
-		border: none;
-		cursor: pointer;
-		padding: 0.25rem;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		border-radius: 50%;
-		transition: background-color 0.2s;
+  .clear-button {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.2s;
 
-		&:hover {
-			background-color: var(--card-hover-bg);
-		}
+    &:hover {
+      background-color: var(--card-hover-bg);
+    }
 
-		svg {
-			width: 1.25rem;
-			height: 1.25rem;
-			color: var(--muted-text);
-		}
-	}
+    svg {
+      width: 1.25rem;
+      height: 1.25rem;
+      color: var(--muted-text);
+    }
+  }
 
-	.results-count {
-		display: flex;
-		justify-content: space-between;
-		margin-block: 0 1rem;
-		font-size: 0.9rem;
-		color: var(--muted-text);
-	}
+  .results-count {
+    display: flex;
+    justify-content: space-between;
+    margin-block: 0 1rem;
+    font-size: 0.9rem;
+    color: var(--muted-text);
+  }
 
-	.results-container {
-		position: relative;
-		min-height: 200px;
-	}
+  .results-container {
+    position: relative;
+    min-height: 200px;
+  }
 
-	.results {
-		display: flex;
-		flex-direction: column;
-		gap: 0.75rem;
-	}
+  .results {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
 
-	.link-card {
-		background-color: var(--card-bg);
-		border: 1px solid var(--card-border);
-		border-radius: 8px;
-		padding: 1.25rem;
-		transition: all 0.2s ease;
-		cursor: pointer;
+  .link-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: 1.25rem;
+    transition: all 0.2s ease;
+    cursor: pointer;
 
-		&:active {
-			background-color: var(--card-active-bg);
-			transform: translateY(0);
-		}
-		&:focus {
-			outline: 2px solid var(--card-focus-outline);
-			outline-offset: 2;
-		}
-	}
+    &:active {
+      background-color: var(--card-active-bg);
+      transform: translateY(0);
+    }
+    &:focus {
+      outline: 2px solid var(--card-focus-outline);
+      outline-offset: 2;
+    }
+  }
 
-	.link-title {
-		font-size: 1.2rem;
-		font-weight: 600;
-		margin: 0 0 0.75rem 0;
-		color: var(--title-color);
-	}
+  .link-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0 0 0.75rem 0;
+    color: var(--title-color);
+  }
 
-	.link-url {
-		display: flex;
-		align-items: center;
-		font-size: 0.9rem;
-		color: var(--link-color);
-		text-decoration: none;
-		word-break: break-all;
-		margin: 0;
-		gap: 0.5rem;
+  .link-url {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    color: var(--link-color);
+    text-decoration: none;
+    word-break: break-all;
+    margin: 0;
+    gap: 0.5rem;
 
-		&:hover {
-			color: var(--link-hover);
-			text-decoration: underline;
-		}
-	}
+    &:hover {
+      color: var(--link-hover);
+      text-decoration: underline;
+    }
+  }
 
-	.link-url .external-link-icon {
-		width: 0.9rem;
-		height: 0.9rem;
-		flex-shrink: 0;
-		color: var(--icon-color);
-	}
+  .link-url .external-link-icon {
+    width: 0.9rem;
+    height: 0.9rem;
+    flex-shrink: 0;
+    color: var(--icon-color);
+  }
 
-	.results-state {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		text-align: center;
-		color: var(--muted-text);
-	}
+  .results-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--muted-text);
+  }
 
-	@media (max-width: 600px) {
-		.container {
-			padding: 1.5rem 1rem;
-		}
+  @media (max-width: 600px) {
+    .container {
+      padding: 1.5rem 1rem;
+    }
 
-		h1 {
-			font-size: 2rem;
-		}
+    h1 {
+      font-size: 2rem;
+    }
 
-		.search-input {
-			padding: 0.9rem 2.75rem;
-			font-size: 1rem;
-		}
+    .search-input {
+      padding: 0.9rem 2.75rem;
+      font-size: 1rem;
+    }
 
-		.link-title {
-			font-size: 1.1rem;
-		}
-	}
+    .link-title {
+      font-size: 1.1rem;
+    }
+  }
+
+  .highlight {
+    background-color: var(--highlight);
+  }
 </style>
