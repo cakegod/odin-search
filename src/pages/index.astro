@@ -166,17 +166,19 @@ import Layout from "../layouts/Layout.astro";
 	${searchResults
     .map(
       ({ item, matches }) => `
-			<div class="link-card" tabindex="0">
-				<p class="link-title">${withHighlight(item.title, matches?.[0].indices as RangeTuple[])}</p>
-				<a href="${item.link}" class="link-url" target="_blank" rel="noopener noreferrer">
+			<a  draggable="false" href="${item.link}" class="link-card"  target="_blank" rel="noopener noreferrer" tabindex="0">
+				<div>
+          <p class="link-title">${withHighlight(item.title, matches?.[0].indices as RangeTuple[])}</p>
+				<p class="link-url">
 					${item.link}
-					<svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+         </p>
+        </div>
+				<svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 						<path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
 						<polyline points="15 3 21 3 21 9"></polyline>
 						<line x1="10" y1="14" x2="21" y2="3"></line>
-					</svg>
-				</a>
-			</div>
+				</svg>
+			</a>
 		`
     )
     .join("")}`;
@@ -267,7 +269,6 @@ import Layout from "../layouts/Layout.astro";
     --title-color: oklch(0.95 0.01 258.338);
     --link-color: oklch(0.7 0.15 250);
     --link-hover-color: oklch(0.8 0.15 250);
-    --icon-color: oklch(0.7 0.15 250);
     --highlight-color: oklch(0.7 0.15 250 / 0.2);
   }
 
@@ -288,7 +289,6 @@ import Layout from "../layouts/Layout.astro";
       --title-color: oklch(0.2 0.02 258.338);
       --link-color: oklch(0.5 0.2 250);
       --link-hover-color: oklch(0.4 0.2 250);
-      --icon-color: oklch(0.5 0.2 250);
     }
   }
 
@@ -301,7 +301,7 @@ import Layout from "../layouts/Layout.astro";
   .container {
     max-width: 50rem;
     margin: 1rem auto;
-    padding: 2rem calc(8px + 1.5625vw);;
+    padding: 2rem calc(8px + 1.5625vw);
     background-color: var(--container-bg-color);
     border-radius: 1rem;
   }
@@ -416,8 +416,13 @@ import Layout from "../layouts/Layout.astro";
     border: 1px solid var(--card-border-color);
     border-radius: 1rem;
     padding: 1.25rem;
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
     cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
 
     &:active {
       background-color: var(--card-active-bg-color);
@@ -426,6 +431,9 @@ import Layout from "../layouts/Layout.astro";
     &:focus {
       outline: 2px solid var(--card-focus-outline-color);
       outline-offset: 2;
+    }
+    &:hover {
+      background-color: var(--card-hover-bg-color);
     }
   }
 
@@ -444,7 +452,7 @@ import Layout from "../layouts/Layout.astro";
     text-decoration: none;
     word-break: break-all;
     margin: 0;
-    gap: 0.5rem;
+    gap: 1rem;
 
     &:hover {
       color: var(--link-hover-color);
@@ -455,14 +463,18 @@ import Layout from "../layouts/Layout.astro";
   .link-url .external-link-icon {
     width: 0.9rem;
     height: 0.9rem;
-    flex-shrink: 0;
-    color: var(--icon-color);
+  }
+
+  .external-link-icon {
+    min-width: 1.5rem;
+    min-height: 1.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
   }
 
   .results-state {
     text-align: center;
     color: var(--muted-text-color);
-
   }
 
   .empty-state-container {
@@ -481,7 +493,6 @@ import Layout from "../layouts/Layout.astro";
     width: 3.5rem;
     height: 3.5rem;
     margin-bottom: 1.25rem;
-    color: var(--icon-color);
   }
 
   .empty-state-title {
@@ -517,7 +528,6 @@ import Layout from "../layouts/Layout.astro";
   }
 
   @media (max-width: 600px) {
-
     h1 {
       font-size: 2rem;
     }
