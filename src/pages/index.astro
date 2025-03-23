@@ -49,10 +49,8 @@ import Layout from "../layouts/Layout.astro";
         </button>
       </form>
       <p class="results-count"></p>
-      <div class="results-container">
-        <div class="results"></div>
-        <p class="results-state">Start typing to search lessons</p>
-      </div>
+      <div class="results"></div>
+      <p class="results-state">Start typing to search lessons</p>
     </div>
   </div>
 </Layout>
@@ -167,41 +165,41 @@ import Layout from "../layouts/Layout.astro";
 
   :root {
     --bg-color: oklch(0.21 0.034 264.665);
-    --container-bg: oklch(0.17 0.03 270);
+    --container-bg-color: oklch(0.17 0.03 270);
     --text-color: oklch(0.95 0.01 258.338);
-    --muted-text: oklch(0.8 0.01 258.338);
-    --search-bg: oklch(0.25 0.03 264.364 / 0.7);
-    --search-border: oklch(0.4 0.05 264.364);
-    --search-focus-border: oklch(0.6 0.1 264.364);
-    --card-bg: oklch(0.27 0.03 264.364 / 0.7);
-    --card-hover-bg: oklch(0.3 0.04 264.364);
-    --card-active-bg: oklch(0.32 0.05 264.364);
-    --card-focus-outline: oklch(0.6 0.1 264.364);
-    --card-border: oklch(0.3 0.04 264.364);
+    --muted-text-color: oklch(0.8 0.01 258.338);
+    --search-bg-color: oklch(0.25 0.03 264.364 / 0.7);
+    --search-border-color: oklch(0.4 0.05 264.364);
+    --search-focus-border-color: oklch(0.6 0.1 264.364);
+    --card-bg-color: oklch(0.27 0.03 264.364 / 0.7);
+    --card-hover-bg-color: oklch(0.3 0.04 264.364);
+    --card-active-bg-color: oklch(0.32 0.05 264.364);
+    --card-focus-outline-color: oklch(0.6 0.1 264.364);
+    --card-border-color: oklch(0.3 0.04 264.364);
     --title-color: oklch(0.95 0.01 258.338);
     --link-color: oklch(0.7 0.15 250);
-    --link-hover: oklch(0.8 0.15 250);
+    --link-hover-color: oklch(0.8 0.15 250);
     --icon-color: oklch(0.7 0.15 250);
-    --highlight: oklch(0.7 0.15 250 / 0.25);
+    --highlight-color: oklch(0.7 0.15 250 / 0.2);
   }
 
   @media (prefers-color-scheme: light) {
     :root {
       --bg-color: oklch(0.95 0.015 264.665);
-      --container-bg: oklch(0.98 0.01 270);
+      --container-bg-color: oklch(0.98 0.01 270);
       --text-color: oklch(0.2 0.02 258.338);
-      --muted-text: oklch(0.4 0.02 258.338);
-      --search-bg: oklch(0.97 0.01 264.364);
-      --search-border: oklch(0.7 0.03 264.364);
-      --search-focus-border: oklch(0.5 0.15 264.364);
-      --card-bg: oklch(0.97 0.01 264.364);
-      --card-hover-bg: oklch(0.95 0.02 264.364);
-      --card-active-bg: oklch(0.93 0.03 264.364);
-      --card-focus-outline: oklch(0.5 0.15 264.364);
-      --card-border: oklch(0.8 0.02 264.364);
+      --muted-text-color: oklch(0.4 0.02 258.338);
+      --search-bg-color: oklch(0.97 0.01 264.364);
+      --search-border-color: oklch(0.7 0.03 264.364);
+      --search-focus-border-color: oklch(0.5 0.15 264.364);
+      --card-bg-color: oklch(0.97 0.01 264.364);
+      --card-hover-bg-color: oklch(0.95 0.02 264.364);
+      --card-active-bg-color: oklch(0.93 0.03 264.364);
+      --card-focus-outline-color: oklch(0.5 0.15 264.364);
+      --card-border-color: oklch(0.8 0.02 264.364);
       --title-color: oklch(0.2 0.02 258.338);
       --link-color: oklch(0.5 0.2 250);
-      --link-hover: oklch(0.4 0.2 250);
+      --link-hover-color: oklch(0.4 0.2 250);
       --icon-color: oklch(0.5 0.2 250);
     }
   }
@@ -216,9 +214,11 @@ import Layout from "../layouts/Layout.astro";
   }
 
   .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem 1.5rem;
+    max-width: 50rem;
+    margin: 1rem auto;
+    padding: 2rem 2.5rem;
+    background-color: var(--container-bg-color);
+    border-radius: 1rem;  
   }
 
   header {
@@ -234,7 +234,6 @@ import Layout from "../layouts/Layout.astro";
       oklch(0.7 0.2 250),
       oklch(0.7 0.15 280)
     );
-    -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     font-weight: 800;
@@ -242,15 +241,12 @@ import Layout from "../layouts/Layout.astro";
 
   .subtitle {
     font-size: 1.1rem;
-    color: var(--muted-text);
+    color: var(--muted-text-color);
     margin: 0;
   }
 
   .search-container {
-    background-color: var(--container-bg);
-    border-radius: 12px;
     padding: 1.5rem;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
   }
 
   form {
@@ -265,27 +261,27 @@ import Layout from "../layouts/Layout.astro";
     transform: translateY(-50%);
     width: 1.25rem;
     height: 1.25rem;
-    color: var(--muted-text);
+    color: var(--muted-text-color);
   }
 
   .search-input {
     width: 100%;
     padding: 1rem 3rem;
     font-size: 1.1rem;
-    border: 2px solid var(--search-border);
+    border: 2px solid var(--search-border-color);
     border-radius: 8px;
-    background-color: var(--search-bg);
+    background-color: var(--search-bg-color);
     color: var(--text-color);
     transition: all 0.2s ease;
 
     &:focus {
       outline: none;
-      border-color: var(--search-focus-border);
-      box-shadow: 0 0 0 3px var(--search-focus-border / 0.3);
+      border-color: var(--search-focus-border-color);
+      box-shadow: 0 0 0 3px var(--search-focus-border-color / 0.3);
     }
 
     &::placeholder {
-      color: var(--muted-text);
+      color: var(--muted-text-color);
       opacity: 0.7;
     }
   }
@@ -306,13 +302,13 @@ import Layout from "../layouts/Layout.astro";
     transition: background-color 0.2s;
 
     &:hover {
-      background-color: var(--card-hover-bg);
+      background-color: var(--card-hover-bg-color);
     }
 
     svg {
       width: 1.25rem;
       height: 1.25rem;
-      color: var(--muted-text);
+      color: var(--muted-text-color);
     }
   }
 
@@ -321,12 +317,7 @@ import Layout from "../layouts/Layout.astro";
     justify-content: space-between;
     margin-block: 0 1rem;
     font-size: 0.9rem;
-    color: var(--muted-text);
-  }
-
-  .results-container {
-    position: relative;
-    min-height: 200px;
+    color: var(--muted-text-color);
   }
 
   .results {
@@ -336,19 +327,19 @@ import Layout from "../layouts/Layout.astro";
   }
 
   .link-card {
-    background-color: var(--card-bg);
-    border: 1px solid var(--card-border);
+    background-color: var(--card-bg-color);
+    border: 1px solid var(--card-border-color);
     border-radius: 8px;
     padding: 1.25rem;
     transition: all 0.2s ease;
     cursor: pointer;
 
     &:active {
-      background-color: var(--card-active-bg);
+      background-color: var(--card-active-bg-color);
       transform: translateY(0);
     }
     &:focus {
-      outline: 2px solid var(--card-focus-outline);
+      outline: 2px solid var(--card-focus-outline-color);
       outline-offset: 2;
     }
   }
@@ -371,7 +362,7 @@ import Layout from "../layouts/Layout.astro";
     gap: 0.5rem;
 
     &:hover {
-      color: var(--link-hover);
+      color: var(--link-hover-color);
       text-decoration: underline;
     }
   }
@@ -389,7 +380,7 @@ import Layout from "../layouts/Layout.astro";
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: var(--muted-text);
+    color: var(--muted-text-color);
   }
 
   @media (max-width: 600px) {
@@ -412,6 +403,6 @@ import Layout from "../layouts/Layout.astro";
   }
 
   .highlight {
-    background-color: var(--highlight);
+    background-color: var(--highlight-color);
   }
 </style>
