@@ -1,27 +1,11 @@
 <script lang="ts">
-  import type { RangeTuple } from "fuse.js";
   import EmptyState from "./empty-state.svelte";
-  import data from "../../scrape-stuff/odin-data.json";
+  import SearchForm from "./search-form.svelte";
+  import SearchResults from "./search-results.svelte";
+  import coursesData from "../../scrape-stuff/odin-data.json";
   import Fuse from "fuse.js";
 
-  function withHighlight(value: string, indices: RangeTuple[]) {
-    return value
-      .split("")
-      .map((s, i) => {
-        if (indices.some(([start, end]) => start === i && end === start)) {
-          return `<span class="highlight">${s}</span>`;
-        } else if (indices.some(([start, _end]) => start === i)) {
-          return `<span class="highlight">${s}`;
-        } else if (indices.some(([_start, end]) => end === i)) {
-          return `${s}</span>`;
-        }
-
-        return s;
-      })
-      .join("");
-  }
-
-  const fuse = new Fuse(data, {
+  const fuse = new Fuse(coursesData, {
     keys: ["title"],
     threshold: 0.2,
     includeMatches: true,
@@ -35,99 +19,13 @@
   <header>
     <h1>Odin Search</h1>
     <p class="subtitle">
-      Search across {data.length} lessons
+      Search across {coursesData.length} lessons
     </p>
   </header>
 
   <div class="search-container">
-    <form onsubmit={(e) => e.preventDefault()}>
-      <svg
-        class="search-icon"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      >
-        <circle cx="11" cy="11" r="8"></circle>
-        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-      </svg>
-      <input
-        bind:value={searchTerms}
-        name="search"
-        class="search-input"
-        placeholder="Search for lessons..."
-        aria-label="Search for lessons"
-      />
-      <button
-        class="clear-button"
-        aria-label="Clear search"
-        type="button"
-        onclick={() => (searchTerms = "")}
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          aria-hidden="true"
-        >
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
-      </button>
-    </form>
-    <p class="results-count">
-      {#if searchResults.length !== 0}
-        found {searchResults.length} result{searchResults.length === 1
-          ? ""
-          : "s"}
-      {/if}
-    </p>
-    <div class="results">
-      {#each searchResults as result}
-        <a
-          draggable="false"
-          href={result.item.link}
-          class="link-card"
-          target="_blank"
-          rel="noopener noreferrer"
-          tabindex="0"
-        >
-          <div>
-            <p class="link-title">
-              {@html withHighlight(
-                result.item.title,
-                result.matches?.[0].indices as RangeTuple[]
-              )}
-            </p>
-            <p class="link-url">
-              {result.item.link}
-            </p>
-          </div>
-          <svg
-            class="external-link-icon"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
-            ></path>
-            <polyline points="15 3 21 3 21 9"></polyline>
-            <line x1="10" y1="14" x2="21" y2="3"></line>
-          </svg>
-        </a>
-      {/each}
-    </div>
+    <SearchForm bind:searchTerms />
+    <SearchResults {searchResults} />
     <div class="results-state">
       {#if searchTerms === ""}
         <EmptyState>
@@ -167,3 +65,68 @@
     </div>
   </div>
 </div>
+
+<style>
+  .container {
+    max-width: 50rem;
+    margin: 1rem auto;
+    padding: 2rem calc(8px + 1.5625vw);
+    background-color: var(--container-bg-color);
+    border-radius: 1rem;
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    margin: 0 0 0.5rem;
+    background: linear-gradient(
+      135deg,
+      oklch(0.7 0.2 250),
+      oklch(0.7 0.15 280)
+    );
+    background-clip: text;
+    color: transparent;
+    font-weight: 800;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+    color: var(--muted-text-color);
+    margin: 0;
+  }
+
+  .search-container {
+    padding: calc(8px + 1.5625vw);
+  }
+
+  .results-state {
+    text-align: center;
+    color: var(--muted-text-color);
+  }
+
+  .suggestion {
+    color: var(--link-color);
+    cursor: pointer;
+    padding: 0.2rem 0.5rem;
+    background-color: var(--highlight-color);
+    border-radius: 4px;
+    transition: all 0.2s;
+    display: inline-block;
+    margin: 0 0.25rem;
+  }
+
+  .suggestion:hover {
+    color: var(--link-hover-color);
+    background-color: var(--highlight-color);
+  }
+
+  @media (max-width: 600px) {
+    h1 {
+      font-size: 2rem;
+    }
+  }
+</style>

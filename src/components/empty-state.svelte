@@ -7,6 +7,7 @@
     tip: Snippet;
     title: Snippet;
   }
+
   const { icon, message, tip, title }: Props = $props();
 </script>
 
