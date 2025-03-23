@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { RangeTuple } from "fuse.js";
+  import EmptyState from "./empty-state.svelte";
   import data from "../../scrape-stuff/odin-data.json";
   import Fuse from "fuse.js";
 
@@ -129,55 +130,39 @@
     </div>
     <div class="results-state">
       {#if searchTerms === ""}
-        <div class="empty-state-container initial-state">
-          <svg
-            class="empty-state-icon"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
+        <EmptyState>
+          {#snippet icon()}
             <circle cx="11" cy="11" r="8"></circle>
             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-            <line x1="11" y1="8" x2="11" y2="14"></line>
-            <line x1="8" y1="11" x2="14" y2="11"></line>
-          </svg>
-          <h2 class="empty-state-title">Ready to explore The Odin Project</h2>
-          <p class="empty-state-message">
+          {/snippet}
+          {#snippet message()}
             Type any keyword to discover relevant lessons
-          </p>
-          <p class="empty-state-tip">
+          {/snippet}
+          {#snippet tip()}
             Try searching for: <span class="suggestion">project</span>,
             <span class="suggestion">css</span>, or
             <span class="suggestion">javascript</span>
-          </p>
-        </div>
+          {/snippet}
+          {#snippet title()}
+            Ready to explore The Odin Project
+          {/snippet}
+        </EmptyState>
       {:else if searchResults.length === 0}
-        <div class="empty-state-container no-results-state">
-          <svg
-            class="empty-state-icon"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
+        <EmptyState>
+          {#snippet icon()}
             <circle cx="12" cy="12" r="10"></circle>
             <line x1="8" y1="12" x2="16" y2="12"></line>
-          </svg>
-          <h2 class="empty-state-title">No matching lessons found</h2>
-          <p class="empty-state-message">
+          {/snippet}
+          {#snippet message()}
+            No matching lessons found
+          {/snippet}
+          {#snippet tip()}
             Try adjusting your search term or using different keywords
-          </p>
-          <p class="empty-state-tip">
-            Check for typos or try more general terms
-          </p>
-        </div>
+          {/snippet}
+          {#snippet title()}
+            No matching lessons found
+          {/snippet}
+        </EmptyState>
       {/if}
     </div>
   </div>

@@ -1,6 +1,6 @@
 ---
-import OdinSearch from "../components/OdinSearch.svelte";
-import Layout from "../layouts/Layout.astro";
+import OdinSearch from "../components/odin-search.svelte";
+import Layout from "../layouts/layout.astro";
 ---
 
 <Layout>
@@ -236,36 +236,6 @@ import Layout from "../layouts/Layout.astro";
   .results-state {
     text-align: center;
     color: var(--muted-text-color);
-  }
-
-  .empty-state-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-    border-radius: 1rem;
-    background-color: var(--card-bg-color);
-    border: 1px solid var(--card-border-color);
-    height: 20rem;
-  }
-
-  .empty-state-icon {
-    width: 3.5rem;
-    height: 3.5rem;
-    margin-bottom: 1.25rem;
-  }
-
-  .empty-state-title {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: var(--title-color);
-  }
-
-  .empty-state-message {
-    font-size: 1.1rem;
-    color: var(--muted-text-color);
-    max-width: 90%;
   }
 
   .suggestion {
