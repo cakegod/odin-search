@@ -34,14 +34,13 @@
   {/if}
 </p>
 
-<ul role="list">
+<ul>
   {#each searchResults as result}
     <li>
       <a
         draggable="false"
         href={result.item.link}
         target="_blank"
-        rel="noopener noreferrer"
         class="result-link"
       >
         <article>
@@ -87,6 +86,7 @@
 
   ul {
     padding: 0;
+    margin: 0;
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
