@@ -1,11 +1,20 @@
 ---
-import OdinSearch from "../components/odin-search.svelte";
-import Layout from "../layouts/Layout.astro";
+import OdinSearch from "../odin-search/index.svelte";
 ---
 
-<Layout>
-  <OdinSearch client:load />
-</Layout>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Odin Search</title>
+  </head>
+  <body>
+    <OdinSearch client:load />
+  </body>
+</html>
 
 <style is:global>
   * {

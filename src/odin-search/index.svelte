@@ -1,7 +1,7 @@
 <script lang="ts">
-  import EmptyState from "./empty-state.svelte";
-  import SearchForm from "./search-form.svelte";
-  import SearchResults from "./search-results.svelte";
+  import EmptyState from "./components/empty-state.svelte";
+  import SearchForm from "./components/search-form.svelte";
+  import SearchResults from "./components/search-results.svelte";
   import coursesData from "../../scrape-stuff/odin-data.json";
   import Fuse from "fuse.js";
 
