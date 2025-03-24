@@ -11,22 +11,30 @@
     includeMatches: true,
   });
 
+  function setSearchTermsWithFocus(v: string) {
+    return () => {
+      searchTerms = v;
+      input.focus();
+    };
+  }
+
   let searchTerms = $state("");
   const searchResults = $derived(fuse.search(searchTerms));
+  let input = $state() as HTMLInputElement;
 </script>
 
-<div class="container">
+<main class="container">
   <header>
     <h1>Odin Search</h1>
-    <p class="subtitle">
+    <p>
       Search across {coursesData.length} lessons
     </p>
   </header>
 
   <div class="search-container">
-    <SearchForm bind:searchTerms />
+    <SearchForm bind:searchTerms bind:input />
     <SearchResults {searchResults} />
-    <div class="results-state">
+    <section class="empty-state-container">
       {#if searchTerms === ""}
         <EmptyState>
           {#snippet icon()}
@@ -37,9 +45,17 @@
             Type any keyword to discover relevant lessons
           {/snippet}
           {#snippet tip()}
-            Try searching for: <span class="suggestion">project</span>,
-            <span class="suggestion">css</span>, or
-            <span class="suggestion">javascript</span>
+            Try searching for: <button
+              class="suggestion"
+              onclick={setSearchTermsWithFocus("project")}>project</button
+            >,
+            <button class="suggestion" onclick={setSearchTermsWithFocus("css")}
+              >css</button
+            >, or
+            <button
+              class="suggestion"
+              onclick={setSearchTermsWithFocus("javascript")}>javascript</button
+            >
           {/snippet}
           {#snippet title()}
             Ready to explore The Odin Project
@@ -62,12 +78,12 @@
           {/snippet}
         </EmptyState>
       {/if}
-    </div>
+    </section>
   </div>
-</div>
+</main>
 
 <style>
-  .container {
+  main {
     max-width: 50rem;
     margin: 1rem auto;
     padding: 2rem calc(8px + 1.5625vw);
@@ -78,32 +94,32 @@
   header {
     text-align: center;
     margin-bottom: 2.5rem;
-  }
 
-  h1 {
-    font-size: 2.5rem;
-    margin: 0 0 0.5rem;
-    background: linear-gradient(
-      135deg,
-      oklch(0.7 0.2 250),
-      oklch(0.7 0.15 280)
-    );
-    background-clip: text;
-    color: transparent;
-    font-weight: 800;
-  }
+    h1 {
+      font-size: 2.5rem;
+      margin: 0 0 0.5rem;
+      background: linear-gradient(
+        135deg,
+        oklch(0.7 0.2 250),
+        oklch(0.7 0.15 280)
+      );
+      background-clip: text;
+      color: transparent;
+      font-weight: 800;
+    }
 
-  .subtitle {
-    font-size: 1.1rem;
-    color: var(--muted-text-color);
-    margin: 0;
+    p {
+      font-size: 1.1rem;
+      color: var(--muted-text-color);
+      margin: 0;
+    }
   }
 
   .search-container {
     padding: calc(8px + 1.5625vw);
   }
 
-  .results-state {
+  .empty-state-container {
     text-align: center;
     color: var(--muted-text-color);
   }
@@ -117,11 +133,13 @@
     transition: all 0.2s;
     display: inline-block;
     margin: 0 0.25rem;
-  }
+    border: none;
+    font: inherit;
 
-  .suggestion:hover {
-    color: var(--link-hover-color);
-    background-color: var(--highlight-color);
+    &:hover {
+      color: var(--link-hover-color);
+      background-color: var(--highlight-color);
+    }
   }
 
   @media (max-width: 600px) {

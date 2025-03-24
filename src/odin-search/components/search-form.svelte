@@ -1,9 +1,10 @@
 <script lang="ts">
   interface Props {
     searchTerms: string;
+    input: HTMLInputElement;
   }
 
-  let { searchTerms = $bindable() }: Props = $props();
+  let { searchTerms = $bindable(), input = $bindable() }: Props = $props();
 </script>
 
 <form onsubmit={(e) => e.preventDefault()}>
@@ -22,6 +23,7 @@
     <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
   </svg>
   <input
+    bind:this={input}
     bind:value={searchTerms}
     name="search"
     placeholder="Search for lessons..."

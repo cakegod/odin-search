@@ -30,7 +30,7 @@
 
 <p class="results-count">
   {#if searchResults.length !== 0}
-    found {searchResults.length} result{searchResults.length === 1 ? "" : "s"}
+    Found {searchResults.length} result{searchResults.length === 1 ? "" : "s"}
   {/if}
 </p>
 
@@ -50,9 +50,9 @@
               result.matches?.[0].indices as RangeTuple[]
             )}
           </h3>
-          <cite>
+          <p>
             {result.item.link}
-          </cite>
+          </p>
         </article>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -128,7 +128,7 @@
       color: var(--title-color);
     }
 
-    cite {
+    p {
       display: flex;
       align-items: center;
       font-size: 0.9rem;
