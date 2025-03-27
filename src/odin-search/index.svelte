@@ -4,6 +4,7 @@
   import SearchResults from "./components/search-results.svelte";
   import coursesData from "../../scrape-stuff/odin-data.json";
   import Fuse from "fuse.js";
+  import { onMount } from "svelte";
 
   const fuse = new Fuse(coursesData, {
     keys: ["title"],
@@ -18,9 +19,25 @@
     };
   }
 
-  let searchTerms = $state("");
+  $effect(() => {
+    const url = new URL(window.location.href);
+
+    if (searchTerms !== "") {
+      url.searchParams.set("search", searchTerms);
+    } else {
+      url.searchParams.delete("search");
+    }
+
+    window.history.replaceState(null, "", url.toString());
+  });
+
+  let searchTerms = $state(
+    new URL(window.location.href).searchParams.get("search") ?? ""
+  );
+
   const searchResults = $derived(fuse.search(searchTerms));
   let input = $state() as HTMLInputElement;
+  $inspect(searchTerms);
 </script>
 
 <main class="container">
